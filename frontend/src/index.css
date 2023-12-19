@@ -10,7 +10,7 @@
 
 @layer components {
     .container {
-        @apply max-w-full w-[1440px] px-5 mx-auto;
+        @apply max-w-full w-[100%] px-5 mx-auto;
     }
 
     .btn {
@@ -28,11 +28,15 @@
     .header{
         @apply bg-[url('./assets/images/mask.png')] bg-no-repeat bg-cover w-full h-[100px] leading-[100px];
     }
+
+    .hero_section{
+        @apply bg-[url('./assets/images/hero-bg.png')] bg-no-repeat bg-center bg-cover;
+    }
 }
 
 @media only screen and (max-width: 1024px) {
     .container {
-        @apply w-full;
+        @apply w-full px-5;
     }
 
     section {
@@ -42,7 +46,7 @@
 
 @media only screen and (max-width: 768px){
     .heading{
-        @apply text-[26px] leading-[36px]
+        @apply text-[26px] leading-[36px] px-5
     }
 
     .text__para{
