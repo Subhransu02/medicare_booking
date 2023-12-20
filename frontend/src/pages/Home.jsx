@@ -6,6 +6,7 @@ import icon01 from "../assets/images/icon01.png";
 import icon02 from "../assets/images/icon02.png";
 import icon03 from "../assets/images/icon03.png";
 import { BsArrowRight } from "react-icons/bs";
+import About from "../components/About/About";
 const Home = function () {
   return (
     <>
@@ -160,15 +161,13 @@ const Home = function () {
                 </Link>
               </div>
             </div>
-
-
-
-
-
-
           </div>
         </div>
       </section>
+
+      {/*about*/}
+      <About />
+
     </>
   );
 };
