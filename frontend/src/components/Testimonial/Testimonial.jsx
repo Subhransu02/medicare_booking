@@ -37,7 +37,7 @@ const Testimonial = () => {
           <img src={patientAvatar} alt="" />
           <div>
             <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
-              Muhibur Rahmman
+            Subhransu Sekhar Panda 
             </h4>
             <div className="flex items-center gap-[2px]">
               <HiStar className="text-yellowColor w-[18px] h-5" />
@@ -61,7 +61,7 @@ const Testimonial = () => {
           <img src={patientAvatar} alt="" />
           <div>
             <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
-              Muhibur Rahmman
+            Subhransu Sekhar Panda 
             </h4>
             <div className="flex items-center gap-[2px]">
               <HiStar className="text-yellowColor w-[18px] h-5" />
@@ -84,7 +84,7 @@ const Testimonial = () => {
           <img src={patientAvatar} alt="" />
           <div>
             <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
-              Muhibur Rahmman
+            Subhransu Sekhar Panda 
             </h4>
             <div className="flex items-center gap-[2px]">
               <HiStar className="text-yellowColor w-[18px] h-5" />
@@ -107,7 +107,7 @@ const Testimonial = () => {
           <img src={patientAvatar} alt="" />
           <div>
             <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
-              Muhibur Rahmman
+              Subhransu Sekhar Panda 
             </h4>
             <div className="flex items-center gap-[2px]">
               <HiStar className="text-yellowColor w-[18px] h-5" />
@@ -130,7 +130,7 @@ const Testimonial = () => {
           <img src={patientAvatar} alt="" />
           <div>
             <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
-              Muhibur Rahmman
+            Subhransu Sekhar Panda 
             </h4>
             <div className="flex items-center gap-[2px]">
               <HiStar className="text-yellowColor w-[18px] h-5" />
@@ -153,7 +153,7 @@ const Testimonial = () => {
           <img src={patientAvatar} alt="" />
           <div>
             <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
-              Muhibur Rahmman
+            Subhransu Sekhar Panda 
             </h4>
             <div className="flex items-center gap-[2px]">
               <HiStar className="text-yellowColor w-[18px] h-5" />
@@ -177,7 +177,7 @@ const Testimonial = () => {
           <img src={patientAvatar} alt="" />
           <div>
             <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
-              Muhibur Rahmman
+            Subhransu Sekhar Panda 
             </h4>
             <div className="flex items-center gap-[2px]">
               <HiStar className="text-yellowColor w-[18px] h-5" />
