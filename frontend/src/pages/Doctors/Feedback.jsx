@@ -24,7 +24,7 @@ const Feedback = () => {
                 {formateDate("02-14-2023")}
               </p>
               <p className="text__para mt-3 font-medium text-[15px]">
-                Good Services, highly recommended
+                Good Services, highly recommended 👍
               </p>
             </div>
           </div>
