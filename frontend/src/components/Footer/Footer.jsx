@@ -20,7 +20,7 @@ const socialLinks = [
 
 const quickLinks01 = [
   {
-    path: "/home",
+    path: "/",
     title: "Home",
   },
   {

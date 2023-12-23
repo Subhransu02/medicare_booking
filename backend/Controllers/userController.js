@@ -53,16 +53,33 @@ export const getSingleUser = async (req, res) => {
   }
 };
 
-export const getAllUsers = async (req, res) => {
-  try {
-    const users = await User.find({}).select("-password");
+// export const getAllUsers = async (req, res) => {
+//   try {
+//     const users = await User.find({}).select("-password");
 
-    res.status(200).json({
-      success: true,
-      message: "Users found",
-      data: users,
-    });
-  } catch (error) {
-    res.status(404).json({ success: false, message: "Not found" });
-  }
-};
+//     res.status(200).json({
+//       success: true,
+//       message: "Users found",
+//       data: users,
+//     });
+//   } catch (error) {
+//     res.status(404).json({ success: false, message: "Not found" });
+//   }
+// };
+
+
+export const getAllUser = (req, res, next) => {
+  return async (req, res, next) => {
+     try {
+       const users = await User.find({}).select("-password");
+ 
+       res.status(200).json({
+         success: true,
+         message: "Users found",
+         data: users,
+       });
+     } catch (error) {
+       res.status(404).json({ success: false, message: "Not found" });
+     }
+  };
+ };

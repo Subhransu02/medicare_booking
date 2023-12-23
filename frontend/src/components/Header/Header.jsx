@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 import { BiMenu } from "react-icons/bi";
 const navLinks = [
   {
-    path: "/home",
+    path: "/",
     display: "Home",
   },
   {
