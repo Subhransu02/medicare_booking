@@ -10,7 +10,7 @@ import DoctorDetails from "../pages/Doctors/DoctorDetails";
 export default function Routers() {
   return (
     <Routes>
-      <Route path="/home" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="/services" element={<Services />} />
       <Route path="/register" element={<Signup />} />
       <Route path="/login" element={<Login />} />
