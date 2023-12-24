@@ -45,25 +45,25 @@ export const createReview = async (req, res) => {
 // @desc     Update a specific review
 // @route    PUT /api/v1/reviews/:id
 // @access   Private
-exports.updateReview = async (req, res) => {
-  try {
-    let review = await Review.findById(req.params.id);
-    if (!review) {
-      return res.status(404).json({
-        success: false,
-        message: "No review found",
-      });
-    }
-    review = await Review.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true,
-    });
-    res.status(200).json({
-      success: true,
-      data: review,
-      message: "Review updated successfully",
-    });
-  } catch (error) {
-    res.json({ success: false, message: "Not Found" });
-  }
-};
+// export.updateReview = async (req, res) => {
+//   try {
+//     let review = await Review.findById(req.params.id);
+//     if (!review) {
+//       return res.status(404).json({
+//         success: false,
+//         message: "No review found",
+//       });
+//     }
+//     review = await Review.findByIdAndUpdate(req.params.id, req.body, {
+//       new: true,
+//       runValidators: true,
+//     });
+//     res.status(200).json({
+//       success: true,
+//       data: review,
+//       message: "Review updated successfully",
+//     });
+//   } catch (error) {
+//     res.json({ success: false, message: "Not Found" });
+//   }
+// };

@@ -7,11 +7,11 @@ export const authenticate = async (req, res, next) => {
   if (!authToken || !authToken.startsWith("Bearer")) {
     return res
       .status(401)
-      .json({ success: false, message: "No token,, authorization denied" });
+      .json({ success: false, message: "No token, authorization denied" });
   }
   try {
     const token = authToken.split(" ")[1];
-    const isCustomAuth = token.length < 500;
+    //const isCustomAuth = token.length < 500;
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
 
@@ -29,7 +29,7 @@ export const authenticate = async (req, res, next) => {
   }
 };
 
-export const restrict = async (req, res, next) => {
+export const restrict = (roles) => async (req, res, next) => {
   const userId = req.userId;
   let user;
   const patient = await User.findById(userId);

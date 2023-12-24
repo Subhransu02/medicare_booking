@@ -17,7 +17,7 @@ export const updateUser = async (req, res) => {
       message: "Successfully updated",
       data: updateUser,
     });
-  } catch (error) {
+  } catch (err) {
     res.status(500).json({ success: false, message: "Failed to update" });
   }
 };
@@ -32,7 +32,7 @@ export const deleteUser = async (req, res) => {
       success: true,
       message: "Successfully deleted",
     });
-  } catch (error) {
+  } catch (err) {
     res.status(500).json({ success: false, message: "Failed to delete" });
   }
 };
@@ -48,38 +48,37 @@ export const getSingleUser = async (req, res) => {
       message: "User found",
       data: user,
     });
-  } catch (error) {
+  } catch (err) {
     res.status(404).json({ success: false, message: "No user found" });
   }
 };
 
-// export const getAllUsers = async (req, res) => {
-//   try {
-//     const users = await User.find({}).select("-password");
+export const getAllUser = async (req, res) => {
+  try {
+    const users = await User.find({}).select("-password");
 
-//     res.status(200).json({
-//       success: true,
-//       message: "Users found",
-//       data: users,
-//     });
-//   } catch (error) {
-//     res.status(404).json({ success: false, message: "Not found" });
-//   }
+    res.status(200).json({
+      success: true,
+      message: "Users found",
+      data: users,
+    });
+  } catch (err) {
+    res.status(404).json({ success: false, message: "Not found" });
+  }
+};
+
+// export const getAllUser = (req, res, next) => {
+//   return async (req, res, next) => {
+//     try {
+//       const users = await User.find({}).select("-password");
+
+//       res.status(200).json({
+//         success: true,
+//         message: "Users found",
+//         data: users,
+//       });
+//     } catch (error) {
+//       res.status(404).json({ success: false, message: "Not found" });
+//     }
+//   };
 // };
-
-
-export const getAllUser = (req, res, next) => {
-  return async (req, res, next) => {
-     try {
-       const users = await User.find({}).select("-password");
- 
-       res.status(200).json({
-         success: true,
-         message: "Users found",
-         data: users,
-       });
-     } catch (error) {
-       res.status(404).json({ success: false, message: "Not found" });
-     }
-  };
- };
