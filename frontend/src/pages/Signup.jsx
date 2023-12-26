@@ -29,7 +29,7 @@ export default function Signup() {
   const handleFileInputChange = async (e) => {
     const file = e.target.files[0];
     const data = await uploadImageToCloudinary(file);
-    // console.log(data);
+    //console.log(data);
     setPreviewURL(data.url);
     setSelectedFile(data.url);
     setFormData({ ...formData, photo: data.url });
@@ -44,7 +44,7 @@ export default function Signup() {
     setLoading(true);
     try {
       const res = await fetch(`${BASE_URL}/auth/register`, {
-        method: "POST",
+        method: "post",
         headers: {
           "Content-Type": "application/json",
         },
@@ -54,8 +54,6 @@ export default function Signup() {
       if (!res.ok) {
         throw new Error(message);
       }
-
-      console.log(formData);
 
 
       setLoading(false);
