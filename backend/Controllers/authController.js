@@ -4,13 +4,14 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 
 const generateToken = (user) => {
-  return jwt.sign({ id: user._id }, process.env.JWT_SECRET_KEY, {
+  return jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET_KEY, {
     expiresIn: "15d",
   });
 };
 
 export const register = async (req, res) => {
   const { email, password, name, role, photo, gender } = req.body;
+
   try {
     let user = null;
 
@@ -18,6 +19,12 @@ export const register = async (req, res) => {
       user = await User.findOne({ email });
     } else if (role == "doctor") {
       user = await Doctor.findOne({ email });
+    }
+
+    if (user) {
+      return res
+        .status(400)
+        .json({ success: false, message: "User already exist" });
     }
 
     const salt = await bcrypt.genSalt(10);
@@ -28,9 +35,9 @@ export const register = async (req, res) => {
         name,
         email,
         password: hashPassword,
-        role,
         photo,
         gender,
+        role,
       });
     }
 
@@ -39,9 +46,9 @@ export const register = async (req, res) => {
         name,
         email,
         password: hashPassword,
-        role,
         photo,
         gender,
+        role,
       });
     }
 
@@ -50,22 +57,18 @@ export const register = async (req, res) => {
     res
       .status(200)
       .json({ success: true, message: "User successfully created" });
-
-    if (!user) {
-      return res
-        .status(400)
-        .json({ success: false, message: "User already exist" });
-    }
-  } catch (error) {}
+  } catch (error) {
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
 };
 
 export const login = async (req, res) => {
-  const { email, password } = req.body;
+  const { email } = req.body;
   try {
     let user = null;
 
     const patient = await User.findOne({ email });
-    const doctor = await User.findOne({ email });
+    const doctor = await Doctor.findOne({ email });
 
     if (patient) {
       user = patient;
@@ -85,7 +88,7 @@ export const login = async (req, res) => {
 
     if (!isPasswordMatch) {
       return res
-        .status(404)
+        .status(400)
         .json({ status: false, message: "Invalid credentials" });
     }
 
@@ -100,5 +103,8 @@ export const login = async (req, res) => {
       data: { ...rest },
       role,
     });
-  } catch (error) {}
+  } catch (err) {
+    res.status(500).json({ status: false, message: "Failed to login" });
+  }
 };
+

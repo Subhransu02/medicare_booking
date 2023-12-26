@@ -4,7 +4,7 @@ export const updateUser = async (req, res) => {
   const id = req.params.id;
 
   try {
-    const updateUser = await User.findByIdAndUpdate(
+    const updatedUser = await User.findByIdAndUpdate(
       id,
       {
         $set: req.body,
@@ -15,7 +15,7 @@ export const updateUser = async (req, res) => {
     res.status(200).json({
       success: true,
       message: "Successfully updated",
-      data: updateUser,
+      data: updatedUser,
     });
   } catch (err) {
     res.status(500).json({ success: false, message: "Failed to update" });
@@ -67,18 +67,3 @@ export const getAllUser = async (req, res) => {
   }
 };
 
-// export const getAllUser = (req, res, next) => {
-//   return async (req, res, next) => {
-//     try {
-//       const users = await User.find({}).select("-password");
-
-//       res.status(200).json({
-//         success: true,
-//         message: "Users found",
-//         data: users,
-//       });
-//     } catch (error) {
-//       res.status(404).json({ success: false, message: "Not found" });
-//     }
-//   };
-// };

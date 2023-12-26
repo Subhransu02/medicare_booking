@@ -6,7 +6,7 @@ export const getAllReviews = async (req, res) => {
     const reviews = await Review.find();
     res
       .status(200)
-      .json({ success: true, data: reviews, message: "Successful" });
+      .json({ success: true, data: reviews, message: "Successful", data:reviews });
   } catch (error) {
     res.json({ success: false, message: "Not Found" });
   }
@@ -37,7 +37,7 @@ export const createReview = async (req, res) => {
     });
     res
       .status(200)
-      .json({ success: true, data: savedReview, message: "Review submitted" });
+      .json({ success: true, data: savedReview, message: "Review submitted", data:savedReview });
   } catch (error) {
     res.status(500).json({ success: false, message: err.message });
   }

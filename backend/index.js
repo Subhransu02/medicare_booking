@@ -37,7 +37,7 @@ const connectDB = async () => {
 };
 
 app.use(express.json());
-app.use(cookieParser);
+app.use(cookieParser());
 app.use(cors(corsOptions));
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/users", userRoute);
@@ -46,5 +46,5 @@ app.use("/api/v1/reviews", reviewRoute);
 
 app.listen(port, () => {
   connectDB();
-  console.log("Server is running on port" + port);
+  console.log("Server is running on port " + port);
 });
