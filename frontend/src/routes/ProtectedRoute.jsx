@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Navigate } from "react-router-dom";
-import { authContext } from "../context/authContext.jsx"; // Fix the import statement to match the correct file name casing
+import { authContext } from "../context/AuthContext.jsx"; // Fix the import statement to match the correct file name casing
 const ProtectedRoute = ({ children, allowedRoles }) => {
     const { token, role } = useContext(authContext);
     const isAllowed = allowedRoles.includes(role);

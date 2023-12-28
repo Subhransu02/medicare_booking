@@ -1,9 +1,8 @@
 import logo from "../../assets/images/logo.png";
-//import userImg from "../../assets/images/avatar-icon.png";
 import { NavLink, Link } from "react-router-dom";
 import { useEffect, useRef, useContext } from "react";
 import { BiMenu } from "react-icons/bi";
-import { authContext } from "../../context/authContext";
+import { authContext } from "../../context/AuthContext";
 const navLinks = [
   {
     path: "/",
@@ -94,7 +93,7 @@ const Header = () => {
                       : "/users/profile/me"
                   }`}
                 >
-                  <figure className="w-[35px] h-[35px] rounded-full">
+                  <figure className="w-[25px] h-[25px] rounded-full">
                     <img
                       src={user?.photo}
                       className="w-full rounded-full cursor-auto"
